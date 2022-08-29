@@ -10,11 +10,32 @@
     */
 
     //ENTRADA
-
+    const telefonou = parseInt(prompt("Telefonou para a vítima? (0-Não | 1-Sim)"));
+    const esteveLocal = parseInt(prompt("Esteve no local do crime? (0-Não | 1-Sim)"));
+    const moraPerto = parseInt(prompt("Mora perto da vítima? (0-Não | 1-Sim)"));
+    const devia = parseInt(prompt("Devia para a vítima? (0-Não | 1-Sim)"));
+    const trabalhou = parseInt(prompt("Trabalhou com a vítima? (0-Não | 1-Sim)"));
     
     //PROCESSAMENTO
-
+    let resultadoNaTela;
+    const pontosCriminoso = telefonou + esteveLocal + moraPerto + devia + trabalhou;
+    switch (pontosCriminoso) {
+        case 0:
+        case 1:
+            resultadoNaTela = "INOCENTE!"
+            break;
+        case 2:
+            resultadoNaTela = "SUSPEITO!"
+            break;
+        case 3:
+        case 4:
+            resultadoNaTela = "CÚMPLICE!"
+            break;
+        case 5:
+            resultadoNaTela = "ASSASSINO!"
+            break;
+    }
     
     //SAÍDA
-
+    document.write(`O julgado é considerado ${resultadoNaTela}!`);
 </script>
